@@ -32,6 +32,12 @@
 			<systemPath>c:\jar\securdps-jdbc-intercept-library-2.3.0.jar</systemPath>
 		</dependency>
 		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<scope>system</scope>
+			<systemPath>c:\jar\aspectjweaver.jar</systemPath>
+		</dependency>
+		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>javax.persistence-api</artifactId>
 			<version>2.2</version>
