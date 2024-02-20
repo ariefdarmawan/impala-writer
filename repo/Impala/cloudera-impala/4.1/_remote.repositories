@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Feb 21 05:39:32 ICT 2024
+cloudera-impala-4.1.jar>=
+cloudera-impala-4.1.pom>=
