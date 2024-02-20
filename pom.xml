@@ -32,12 +32,6 @@
 			<systemPath>c:\jar\securdps-jdbc-intercept-library-2.3.0.jar</systemPath>
 		</dependency>
 		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<scope>system</scope>
-			<systemPath>c:\jar\aspectjweaver.jar</systemPath>
-		</dependency>
-		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>javax.persistence-api</artifactId>
 			<version>2.2</version>
@@ -66,13 +60,6 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<agent>c:/jar/aspectjweaver.jar=PORT=8081</agent>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
