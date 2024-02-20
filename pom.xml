@@ -74,7 +74,7 @@
 						<sdf>c:/jar/BSIsdf.yaml</sdf>
 					</systemPropertyVariables>
 					<!-- Add Java agent for tests -->
-					<argLine>-Dlog4j.configurationFile="c:/jar/log4j2.xml" -javaagent:c:/jar/aspectjweaver.jar</argLine>
+					<argLine>-Dlog4j.configurationFile="c:/jar/log4j2.xml" -javaagent=c:/jar/aspectjweaver.jar</argLine>
 				</configuration>
 			</plugin>
 		</plugins>
