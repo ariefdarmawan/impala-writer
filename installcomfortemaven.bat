@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=\jar\securdps-jdbc-intercept-library-2.3.0.jar -DgroupId=com.comforte -DartifactId=jdbc-interceptor -Dversion=2.3.0 -Dpackaging=jar

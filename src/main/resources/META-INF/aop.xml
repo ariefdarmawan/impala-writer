@@ -1,0 +1,11 @@
+<aspectj>
+    <aspects>
+        <aspect name="com.comforte.JdbcInterception.JdbcAspect"/>
+    </aspects>
+<!--    Activate this option for a more verbose output from AspectJ -->
+<!--    <weaver options="-verbose">-->
+    <weaver options="-verbose -Xlint:ignore">
+<!--        <include within="com.comforte.*"/>-->
+<!--        <include within="java.sql.*"/>-->
+    </weaver>
+</aspectj>

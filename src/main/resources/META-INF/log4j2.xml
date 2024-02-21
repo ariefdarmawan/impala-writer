@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- How do I specify the configuration file location? By default, Log4j 
+	looks for a configuration file named log4j2.xml in the classpath. But you 
+	can also specify the full path of the configuration file with this system 
+	property: -Dlog4j.configurationFile=path/to/log4j2.xml That property can 
+	also be included in a classpath resource file named log4j2.component.properties. 
+	// -->
+<Configuration status="WARN">
+	<Properties>
+		<Property name="datestamp">yyyy-MM-dd/HH:mm:ss.SSS/zzz</Property>
+	</Properties>
+	<Appenders>
+		<RollingRandomAccessFile name="RollingFile"
+			fileName="c:/comforte/logs/securdps.log"
+			filePattern="c:/comforte/logs/securdps-%d{MM-dd-yyyy}.log.gz"
+			ignoreExceptions="false">
+			<PatternLayout>
+				<Pattern>%d{${datestamp}} | %X{PID} | %-5p [%t] %c: %m%n </Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="20 MB" />
+			</Policies>
+		</RollingRandomAccessFile>
+		<File name="JDBClogger" fileName="c:/comforte/logs/JDBCcalls.log">
+			<PatternLayout>
+				<Pattern>%d{${datestamp}} | %-5p [%t] %m%n </Pattern>
+			</PatternLayout>
+		</File>
+		<Console name="Console" target="SYSTEM_ERR">
+			<PatternLayout
+				pattern="%d{${datestamp}} | %X{PID} | %-5p [%t] %c: %m%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="com.comforte.JDBCLogger" level="INFO" additivity="false">
+			<AppenderRef ref="JDBClogger" Level="INFO" />
+		</Logger>
+
+		<Root level="INFO">
+			<AppenderRef ref="Console" Level="FATAL" />
+			<AppenderRef ref="RollingFile" Level="INFO" />
+		</Root>
+	</Loggers>
+</Configuration>

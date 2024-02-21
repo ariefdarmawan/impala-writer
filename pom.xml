@@ -14,7 +14,7 @@
 	<name>impala-writer</name>
 	<description>Read and write data to Impala database</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>8</java.version>
 	</properties>
 	<repositories>
 		<repository>
@@ -29,19 +29,14 @@
 			<version>4.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>comforte-interception</artifactId>
+			<groupId>com.comforte</groupId>
+			<artifactId>jdbc-interceptor</artifactId>
 			<version>2.3.0</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.persistence</groupId>
 			<artifactId>javax.persistence-api</artifactId>
 			<version>2.2</version>
-		</dependency>
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.12</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -58,6 +53,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.22.1</version> <!-- Use the latest version available -->
+		</dependency>		
 	</dependencies>
 
 	<build>
