@@ -33,7 +33,35 @@ public class WriterController {
     }
 
     @PostMapping("/v1/write")
-    String write(@RequestBody BsiRecord record) {
+    String write(@RequestBody ComforteProtection record) {
+        try {   
+            Class.forName(ClassName);
+            Connection conn = DriverManager.getConnection(Host);
+            Statement stmt = conn.createStatement();
+            String sqlCmd = String.format("insert into comforte_protection(name, address, email, cif, phone, join_date) "+
+            "values(%s, %s, %s, %s, %s, '%s')",
+                    sendStringToSQL(record.name), 
+                    sendStringToSQL(record.address), 
+                    sendStringToSQL(record.email), 
+                    sendStringToSQL(record.cif), 
+                    sendStringToSQL(record.phone), 
+                    record.join_date);
+            System.out.printf("execute command: %s\n",sqlCmd);
+            stmt.execute(sqlCmd);
+            conn.close();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            return "NOK";
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return "NOK";
+        }
+
+        return "OK";
+    }
+
+    @PostMapping("/v1/write2")
+    String write2(@RequestBody BsiRecord record) {
         try {   
             Class.forName(ClassName);
             Connection conn = DriverManager.getConnection(Host);
